@@ -1,2 +1,3 @@
-# licdata-infrastructure
-Definition for acmsl/licdata-infrastructure
+# Licdata Infrastructure Layer
+
+Definition for [Licdata Infrastructure](https://github.com/acmsl/licdata-infrastructure "Licdata Infrastructure").
