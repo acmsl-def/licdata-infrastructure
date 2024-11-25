@@ -63,7 +63,7 @@
         version = "0.0.1";
         sha256 = "067hbr38z172ic3456nmbi56sd6mymq9q1ljnw6cvlls99sm65bg";
         pname = "${org}-${repo}";
-        pythonpackage = "org.acmsl.licdata";
+        pythonpackage = "org.acmsl.licdata.infrastructure";
         package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;
         pkgs = import nixos { inherit system; };
         description = "Licdata Infrastructure";
@@ -235,7 +235,7 @@
         packages = rec {
           default = acmsl-licdata-infrastructure-python312;
           acmsl-licdata-infrastructure-python38 =
-            pythoneda-acmsl-licdata-infrastructure-for {
+            acmsl-licdata-infrastructure-for {
               acmsl-licdata-domain = acmsl-licdata-domain.packages.${system}.acmsl-licdata-domain-python38;
               acmsl-licdata-events = acmsl-licdata-events.packages.${system}.acmsl-licdata-events-python38;
               python = pkgs.python38;
