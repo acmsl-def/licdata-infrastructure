@@ -1,6 +1,5 @@
-.DS_Store
-.idea
-*.log
-tmp/
-
+result
+deps.txt
+deps.dot
+deps.png
 src
