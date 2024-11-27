@@ -22,7 +22,7 @@
     acmsl-licdata-domain = {
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
-      url = "github:acmsl-def/licdata-domain/0.0.2";
+      url = "github:acmsl-def/licdata-domain/0.0.4";
       inputs.acmsl-licdata-events.follows =
         "acmsl-licdata-events";
       inputs.pythoneda-shared-pythonlang-banner.follows =
