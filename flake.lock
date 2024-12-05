@@ -19,16 +19,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1733318989,
-        "narHash": "sha256-ENpeQvkbtDHWsD8BqKE885xwed9+LSp+3pQu41lMl3w=",
+        "lastModified": 1733410002,
+        "narHash": "sha256-R3+nqjL/TB5AqzV+FSwoILjHP83AELNAm78JgBaIGDE=",
         "owner": "acmsl-def",
         "repo": "licdata-domain",
-        "rev": "f9ddfdfd6df2f905d5393df5d4b630d0e9be0abe",
+        "rev": "2aa99825f452560ce5e086209718a5546f4fdb92",
         "type": "github"
       },
       "original": {
         "owner": "acmsl-def",
-        "ref": "0.0.8",
+        "ref": "0.0.9",
         "repo": "licdata-domain",
         "type": "github"
       }
@@ -49,16 +49,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1733318918,
-        "narHash": "sha256-FwsoADHmk5SoI2pIa6ukqdNhaic651qmCLOedN5+I3U=",
+        "lastModified": 1733409513,
+        "narHash": "sha256-oofISAr+QC27EhUInefZ5ZrrxPpYTws4xlLabitsTTA=",
         "owner": "acmsl-def",
         "repo": "licdata-events",
-        "rev": "8cf9ff238deb22a3e534048b10cf44106d4a657a",
+        "rev": "69039623389e9a77cb285caab807651963a0786e",
         "type": "github"
       },
       "original": {
         "owner": "acmsl-def",
-        "ref": "0.0.9",
+        "ref": "0.0.10",
         "repo": "licdata-events",
         "type": "github"
       }
@@ -132,16 +132,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1733307718,
-        "narHash": "sha256-eKfKc7xa32GIGOz200rDvQFZVdAucBNhAux6eM44nfc=",
+        "lastModified": 1733397996,
+        "narHash": "sha256-faRl1cx7+kqW2SwrUIAJOe8wqPfvaHTivHE1qY+BCWY=",
         "owner": "pythoneda-shared-pythonlang-def",
         "repo": "domain",
-        "rev": "b12c3b21826b70711f53ce3ce496d936223c555d",
+        "rev": "b51a9726e9ae5a848fcceb84949672884460bb02",
         "type": "github"
       },
       "original": {
         "owner": "pythoneda-shared-pythonlang-def",
-        "ref": "0.0.92",
+        "ref": "0.0.93",
         "repo": "domain",
         "type": "github"
       }

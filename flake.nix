@@ -22,7 +22,7 @@
     acmsl-licdata-domain = {
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
-      url = "github:acmsl-def/licdata-domain/0.0.8";
+      url = "github:acmsl-def/licdata-domain/0.0.9";
       inputs.acmsl-licdata-events.follows =
         "acmsl-licdata-events";
       inputs.pythoneda-shared-pythonlang-banner.follows =
@@ -33,7 +33,7 @@
     acmsl-licdata-events = {
       inputs.nixos.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
-      url = "github:acmsl-def/licdata-events/0.0.9";
+      url = "github:acmsl-def/licdata-events/0.0.10";
       inputs.pythoneda-shared-pythonlang-banner.follows =
         "pythoneda-shared-pythonlang-banner";
       inputs.pythoneda-shared-pythonlang-domain.follows =
@@ -51,7 +51,7 @@
       inputs.nixos.follows = "nixos";
       inputs.pythoneda-shared-pythonlang-banner.follows =
         "pythoneda-shared-pythonlang-banner";
-      url = "github:pythoneda-shared-pythonlang-def/domain/0.0.92";
+      url = "github:pythoneda-shared-pythonlang-def/domain/0.0.93";
     };
   };
   outputs = inputs:
