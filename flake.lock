@@ -19,16 +19,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1733410002,
-        "narHash": "sha256-R3+nqjL/TB5AqzV+FSwoILjHP83AELNAm78JgBaIGDE=",
+        "lastModified": 1733496577,
+        "narHash": "sha256-Mb75jVMW4TtemnEAsXDISv/eBvGF9CkI5evBK6YR14k=",
         "owner": "acmsl-def",
         "repo": "licdata-domain",
-        "rev": "2aa99825f452560ce5e086209718a5546f4fdb92",
+        "rev": "d0dd238789bd278ecd938a0949ebc62e3df617af",
         "type": "github"
       },
       "original": {
         "owner": "acmsl-def",
-        "ref": "0.0.9",
+        "ref": "0.0.10",
         "repo": "licdata-domain",
         "type": "github"
       }
@@ -49,16 +49,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1733409513,
-        "narHash": "sha256-oofISAr+QC27EhUInefZ5ZrrxPpYTws4xlLabitsTTA=",
+        "lastModified": 1733496468,
+        "narHash": "sha256-klZcan6hPeVyTFRu1QjCCBofccHHcoGihPMY6ZH7+oY=",
         "owner": "acmsl-def",
         "repo": "licdata-events",
-        "rev": "69039623389e9a77cb285caab807651963a0786e",
+        "rev": "34fcda50f23952f400a3fcb22451a47800e0a155",
         "type": "github"
       },
       "original": {
         "owner": "acmsl-def",
-        "ref": "0.0.10",
+        "ref": "0.0.11",
         "repo": "licdata-events",
         "type": "github"
       }
@@ -95,26 +95,56 @@
         "type": "github"
       }
     },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1717179513,
+        "narHash": "sha256-vboIEwIQojofItm2xGCdZCzW96U85l9nDW3ifMuAIdM=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "63dacb46bf939521bdc93981b4cbb7ecb58427a0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "24.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1717179513,
+        "narHash": "sha256-vboIEwIQojofItm2xGCdZCzW96U85l9nDW3ifMuAIdM=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "63dacb46bf939521bdc93981b4cbb7ecb58427a0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "24.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "pythoneda-shared-pythonlang-banner": {
       "inputs": {
         "flake-utils": [
           "flake-utils"
         ],
-        "nixos": [
-          "nixos"
-        ]
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1732862235,
-        "narHash": "sha256-eMeTwIJ+aMgglZSY8YhHdTAy3STDjXNd+pB5b1JzYgA=",
+        "lastModified": 1733487266,
+        "narHash": "sha256-T4/WTHydMJrxLRYqnlU/OA+fZtmhS8tF4EHGGgHFbxs=",
         "owner": "pythoneda-shared-pythonlang-def",
         "repo": "banner",
-        "rev": "7557c5fb64daa6d2824db5f88e74e2df5b667f31",
+        "rev": "280b75ffcd3a871e157e7c163ba19ac2c615e872",
         "type": "github"
       },
       "original": {
         "owner": "pythoneda-shared-pythonlang-def",
-        "ref": "0.0.71",
+        "ref": "0.0.72",
         "repo": "banner",
         "type": "github"
       }
@@ -124,24 +154,22 @@
         "flake-utils": [
           "flake-utils"
         ],
-        "nixos": [
-          "nixos"
-        ],
+        "nixpkgs": "nixpkgs_2",
         "pythoneda-shared-pythonlang-banner": [
           "pythoneda-shared-pythonlang-banner"
         ]
       },
       "locked": {
-        "lastModified": 1733397996,
-        "narHash": "sha256-faRl1cx7+kqW2SwrUIAJOe8wqPfvaHTivHE1qY+BCWY=",
+        "lastModified": 1733487391,
+        "narHash": "sha256-Dj9kIIpJgW/XGbS3F1jIVo73qTwj1zJorYFB6oVbTj0=",
         "owner": "pythoneda-shared-pythonlang-def",
         "repo": "domain",
-        "rev": "b51a9726e9ae5a848fcceb84949672884460bb02",
+        "rev": "32c8d0a011d81cbed779f647f1c3cb01255320e8",
         "type": "github"
       },
       "original": {
         "owner": "pythoneda-shared-pythonlang-def",
-        "ref": "0.0.93",
+        "ref": "0.0.94",
         "repo": "domain",
         "type": "github"
       }
