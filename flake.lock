@@ -19,16 +19,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1733600428,
-        "narHash": "sha256-mbijpVBaHwg9/NsGt1Og1lr15lbAtEdm7bBQ61BrCWo=",
+        "lastModified": 1733638989,
+        "narHash": "sha256-0Y9atfmTugUCShZ0+HjQnVPnOvZsSSLOkd8QOyXUT9M=",
         "owner": "acmsl-def",
         "repo": "licdata-domain",
-        "rev": "315a9f71a1b3a1253e9136d6ff799bde73d06823",
+        "rev": "a948722fcc8e3691f152c6bc0ae01eac5d297cd8",
         "type": "github"
       },
       "original": {
         "owner": "acmsl-def",
-        "ref": "0.0.11",
+        "ref": "0.0.12",
         "repo": "licdata-domain",
         "type": "github"
       }
@@ -49,16 +49,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1733600351,
-        "narHash": "sha256-cxIHzOZvliRLsYeyUn/Glsjl0fkmoJNOXibKzw0NMDw=",
+        "lastModified": 1733638847,
+        "narHash": "sha256-i439KJYe8+sTioqudczFL4C2tNhahHBwHM60L4729Jw=",
         "owner": "acmsl-def",
         "repo": "licdata-events",
-        "rev": "cc92d17e4a2adf7196e40f4a397804cf08b6f24c",
+        "rev": "62a8164852143195d60f01bd60dd91b5d5b9265a",
         "type": "github"
       },
       "original": {
         "owner": "acmsl-def",
-        "ref": "0.0.12",
+        "ref": "0.0.13",
         "repo": "licdata-events",
         "type": "github"
       }
@@ -81,16 +81,16 @@
         "pythoneda-shared-pythonlang-infrastructure": "pythoneda-shared-pythonlang-infrastructure"
       },
       "locked": {
-        "lastModified": 1733638549,
-        "narHash": "sha256-fG1+ESfs+jlWZHeWJx0bFyDQsB8/s4PrpVy+72OI1JM=",
+        "lastModified": 1733638921,
+        "narHash": "sha256-nd6WoK3wLuY7aNMQp8Nd0LbZDIdWzfX8ucfwjKLXxUg=",
         "owner": "acmsl-def",
         "repo": "licdata-events-infrastructure",
-        "rev": "27e1eb44b94a4bbc23da06380c0790b8f69af037",
+        "rev": "b5cf0662335fcf554c2ab9036773eaba98f927eb",
         "type": "github"
       },
       "original": {
         "owner": "acmsl-def",
-        "ref": "0.0.1",
+        "ref": "0.0.2",
         "repo": "licdata-events-infrastructure",
         "type": "github"
       }
@@ -115,16 +115,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1733600351,
-        "narHash": "sha256-cxIHzOZvliRLsYeyUn/Glsjl0fkmoJNOXibKzw0NMDw=",
+        "lastModified": 1733638847,
+        "narHash": "sha256-i439KJYe8+sTioqudczFL4C2tNhahHBwHM60L4729Jw=",
         "owner": "acmsl-def",
         "repo": "licdata-events",
-        "rev": "cc92d17e4a2adf7196e40f4a397804cf08b6f24c",
+        "rev": "62a8164852143195d60f01bd60dd91b5d5b9265a",
         "type": "github"
       },
       "original": {
         "owner": "acmsl-def",
-        "ref": "0.0.12",
+        "ref": "0.0.13",
         "repo": "licdata-events",
         "type": "github"
       }
