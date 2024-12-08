@@ -28,6 +28,7 @@ packages = [{include = "@package@"}]
 [tool.poetry.dependencies]
 acmsl-licdata-domain = "^@acmslLicdataDomain@"
 acmsl-licdata-events = "^@acmslLicdataEvents@"
+acmsl-licdata-events-infrastructure = "^@acmslLicdataEventsInfrastructure@"
 python = "^@pythonMajorMinorVersion@"
 pythoneda-shared-pythonlang-domain = "^@pythonedaSharedPythonlangDomain@"
 
