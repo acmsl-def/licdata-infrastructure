@@ -159,6 +159,34 @@
         "type": "github"
       }
     },
+    "esdbclient_2": {
+      "inputs": {
+        "flake-utils": [
+          "pythoneda-shared-pythonlang-infrastructure",
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "pythoneda-shared-pythonlang-infrastructure",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dir": "esdbclient",
+        "lastModified": 1733507692,
+        "narHash": "sha256-IBPBdUFCp/HAlg/LMHlf5yW9SILoyEota9r14C1983w=",
+        "owner": "rydnr",
+        "repo": "nix-flakes",
+        "rev": "d810b75bee44f2049a1769d99493636d7e631632",
+        "type": "github"
+      },
+      "original": {
+        "dir": "esdbclient",
+        "owner": "rydnr",
+        "ref": "esdbclient-1.1.3.1",
+        "repo": "nix-flakes",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1652776076,
@@ -277,6 +305,37 @@
         "type": "github"
       }
     },
+    "pythoneda-shared-pythonlang-infrastructure_2": {
+      "inputs": {
+        "esdbclient": "esdbclient_2",
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "pythoneda-shared-pythonlang-banner": [
+          "pythoneda-shared-pythonlang-banner"
+        ],
+        "pythoneda-shared-pythonlang-domain": [
+          "pythoneda-shared-pythonlang-domain"
+        ]
+      },
+      "locked": {
+        "lastModified": 1736696531,
+        "narHash": "sha256-YsM8siZathYCFpK20aqQjpjQcmPcZmQq7D9LzEFf6JY=",
+        "owner": "pythoneda-shared-pythonlang-def",
+        "repo": "infrastructure",
+        "rev": "604141365c4f24a75cfbab5ab56a354daaf36c0f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pythoneda-shared-pythonlang-def",
+        "ref": "0.0.87",
+        "repo": "infrastructure",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "acmsl-licdata-domain": "acmsl-licdata-domain",
@@ -285,7 +344,8 @@
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs",
         "pythoneda-shared-pythonlang-banner": "pythoneda-shared-pythonlang-banner",
-        "pythoneda-shared-pythonlang-domain": "pythoneda-shared-pythonlang-domain"
+        "pythoneda-shared-pythonlang-domain": "pythoneda-shared-pythonlang-domain",
+        "pythoneda-shared-pythonlang-infrastructure": "pythoneda-shared-pythonlang-infrastructure_2"
       }
     }
   },
