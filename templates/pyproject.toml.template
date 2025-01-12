@@ -31,6 +31,7 @@ acmsl-licdata-events = "^@acmslLicdataEvents@"
 acmsl-licdata-events-infrastructure = "^@acmslLicdataEventsInfrastructure@"
 python = "^@pythonMajorMinorVersion@"
 pythoneda-shared-pythonlang-domain = "^@pythonedaSharedPythonlangDomain@"
+pythoneda-shared-pythonlang-infrastructure = "^@pythonedaSharedPythonlangInfrastructure@"
 
 [build-system]
 requires = ["poetry-core"]

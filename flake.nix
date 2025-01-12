@@ -62,6 +62,15 @@
         "pythoneda-shared-pythonlang-banner";
       url = "github:pythoneda-shared-pythonlang-def/domain/0.0.110";
     };
+    pythoneda-shared-pythonlang-infrastructure = {
+      inputs.flake-utils.follows = "flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.pythoneda-shared-pythonlang-banner.follows =
+        "pythoneda-shared-pythonlang-banner";
+      inputs.pythoneda-shared-pythonlang-domain.follows =
+        "pythoneda-shared-pythonlang-domain";
+      url = "github:pythoneda-shared-pythonlang-def/domain/0.0.110";
+    };
   };
   outputs = inputs:
     with inputs;
@@ -88,7 +97,8 @@
         shared = import "${pythoneda-shared-pythonlang-banner}/nix/shared.nix";
         acmsl-licdata-infrastructure-for = { acmsl-licdata-events, acmsl-licdata-events-infrastructure, acmsl-licdata-domain, python
           , pythoneda-shared-pythonlang-banner
-          , pythoneda-shared-pythonlang-domain}:
+          , pythoneda-shared-pythonlang-domain
+          , pythoneda-shared-pythonlang-infrastructure}:
           let
             pnameWithUnderscores =
               builtins.replaceStrings [ "-" ] [ "_" ] pname;
@@ -113,6 +123,8 @@
                 version;
               pythonedaSharedPythonlangDomain =
                 pythoneda-shared-pythonlang-domain.version;
+              pythonedaSharedPythonlangInfrastructure =
+                pythoneda-shared-pythonlang-infrastructure.version;
               src = pyprojectTomlTemplate;
             };
 
@@ -130,18 +142,19 @@
               acmsl-licdata-events
               acmsl-licdata-events-infrastructure
               pythoneda-shared-pythonlang-domain
+              pythoneda-shared-pythonlang-infrastructure
             ];
 
             # pythonImportsCheck = [ pythonpackage ];
 
             unpackPhase = ''
               command cp -r ${src} .
-              sourceRoot=$(ls | grep -v env-vars)
+              sourceRoot=$(command ls | command grep -v env-vars)
               command chmod -R +w $sourceRoot
               command cp ${pyprojectToml} $sourceRoot/pyproject.toml
             '';
 
-            postInstall = ''
+            postInstall = with python.pkgs; ''
               command pushd /build/$sourceRoot
               for f in $(command find . -name '__init__.py' | sed 's ^\./  g'); do
                 if [[ ! -e $out/lib/python${pythonMajorMinorVersion}/site-packages/$f ]]; then
@@ -150,8 +163,18 @@
                 fi
               done
               command popd
-              command mkdir $out/dist
+              command mkdir -p $out/dist $out/deps/flakes
               command cp dist/${wheelName} $out/dist
+              for dep in ${acmsl-licdata-domain} ${acmsl-licdata-events} ${acmsl-licdata-events-infrastructure} ${pythoneda-shared-pythonlang-domain} ${pythoneda-shared-pythonlang-infrastructure}; do
+                command cp -r $dep/dist/* $out/deps || true
+                if [ -e $dep/deps ]; then
+                  command cp -r $dep/deps/* $out/deps || true
+                fi
+                METADATA=$dep/lib/python${pythonMajorMinorVersion}/site-packages/*.dist-info/METADATA
+                NAME="$(command grep -m 1 '^Name: ' $METADATA | command cut -d ' ' -f 2)"
+                VERSION="$(command grep -m 1 '^Version: ' $METADATA | command cut -d ' ' -f 2)"
+                command ln -s $dep $out/deps/flakes/$NAME-$VERSION || true
+              done
             '';
 
             meta = with pkgs.lib; {
@@ -255,6 +278,8 @@
                 pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python39;
               pythoneda-shared-pythonlang-domain =
                 pythoneda-shared-pythonlang-domain.packages.${system}.pythoneda-shared-pythonlang-domain-python39;
+              pythoneda-shared-pythonlang-infrastructure =
+                pythoneda-shared-pythonlang-infrastructure.packages.${system}.pythoneda-shared-pythonlang-infrastructure-python39;
             };
           acmsl-licdata-infrastructure-python310 =
             acmsl-licdata-infrastructure-for {
@@ -266,6 +291,8 @@
                 pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python310;
               pythoneda-shared-pythonlang-domain =
                 pythoneda-shared-pythonlang-domain.packages.${system}.pythoneda-shared-pythonlang-domain-python310;
+              pythoneda-shared-pythonlang-infrastructure =
+                pythoneda-shared-pythonlang-infrastructure.packages.${system}.pythoneda-shared-pythonlang-infrastructure-python310;
             };
           acmsl-licdata-infrastructure-python311 =
             acmsl-licdata-infrastructure-for {
@@ -277,6 +304,8 @@
                 pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python311;
               pythoneda-shared-pythonlang-domain =
                 pythoneda-shared-pythonlang-domain.packages.${system}.pythoneda-shared-pythonlang-domain-python311;
+              pythoneda-shared-pythonlang-infrastructure =
+                pythoneda-shared-pythonlang-infrastructure.packages.${system}.pythoneda-shared-pythonlang-infrastructure-python311;
             };
           acmsl-licdata-infrastructure-python312 =
             acmsl-licdata-infrastructure-for {
@@ -288,6 +317,8 @@
                 pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python312;
               pythoneda-shared-pythonlang-domain =
                 pythoneda-shared-pythonlang-domain.packages.${system}.pythoneda-shared-pythonlang-domain-python312;
+              pythoneda-shared-pythonlang-infrastructure =
+                pythoneda-shared-pythonlang-infrastructure.packages.${system}.pythoneda-shared-pythonlang-infrastructure-python312;
             };
           acmsl-licdata-infrastructure-python313 =
             acmsl-licdata-infrastructure-for {
@@ -299,6 +330,8 @@
                 pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python313;
               pythoneda-shared-pythonlang-domain =
                 pythoneda-shared-pythonlang-domain.packages.${system}.pythoneda-shared-pythonlang-domain-python313;
+              pythoneda-shared-pythonlang-infrastructure =
+                pythoneda-shared-pythonlang-infrastructure.packages.${system}.pythoneda-shared-pythonlang-infrastructure-python313;
             };
         };
       });
