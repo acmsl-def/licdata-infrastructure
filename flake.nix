@@ -148,21 +148,18 @@
             # pythonImportsCheck = [ pythonpackage ];
 
             unpackPhase = ''
-              command cp -r ${src} .
-              sourceRoot=$(command ls | command grep -v env-vars)
-              command chmod -R +w $sourceRoot
-              command cp ${pyprojectToml} $sourceRoot/pyproject.toml
+              command cp -r ${src}/* .
+              command chmod -R +w .
+              command cp ${pyprojectToml} ./pyproject.toml
             '';
 
             postInstall = with python.pkgs; ''
-              command pushd /build/$sourceRoot
               for f in $(command find . -name '__init__.py' | sed 's ^\./  g'); do
                 if [[ ! -e $out/lib/python${pythonMajorMinorVersion}/site-packages/$f ]]; then
                   command mkdir -p $out/lib/python${pythonMajorMinorVersion}/site-packages/"$(command dirname $f)";
                   command cp -r "$(command dirname $f)"/* $out/lib/python${pythonMajorMinorVersion}/site-packages/"$(command dirname $f)";
                 fi
               done
-              command popd
               command mkdir -p $out/dist $out/deps/flakes
               command cp dist/${wheelName} $out/dist
               for dep in ${acmsl-licdata-domain} ${acmsl-licdata-events} ${acmsl-licdata-events-infrastructure} ${pythoneda-shared-pythonlang-domain} ${pythoneda-shared-pythonlang-infrastructure}; do
