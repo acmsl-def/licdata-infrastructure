@@ -78,8 +78,8 @@
       let
         org = "acmsl";
         repo = "licdata-infrastructure";
-        version = "0.0.2";
-        sha256 = "1ixwdwgbynrqdkqia21wpykjjcksk8rnsgw3jh9xwc91v5ngryms";
+        version = "0.0.3";
+        sha256 = "01br5bik9d5dqixxi9bcx58dnp9imz59wk2l8ka3kar14z1q6w20";
         pname = "${org}-${repo}";
         pythonpackage = "org.acmsl.licdata.infrastructure";
         package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;
