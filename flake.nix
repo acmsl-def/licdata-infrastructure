@@ -121,6 +121,7 @@
               desc = description;
               inherit homepage pname pythonMajorMinorVersion package
                 version;
+              pygithub = python.pkgs.pygithub.version;
               pythonedaSharedPythonlangDomain =
                 pythoneda-shared-pythonlang-domain.version;
               pythonedaSharedPythonlangInfrastructure =
@@ -141,6 +142,7 @@
               acmsl-licdata-domain
               acmsl-licdata-events
               acmsl-licdata-events-infrastructure
+              pygithub
               pythoneda-shared-pythonlang-domain
               pythoneda-shared-pythonlang-infrastructure
             ];
@@ -171,6 +173,12 @@
                 NAME="$(command grep -m 1 '^Name: ' $METADATA | command cut -d ' ' -f 2)"
                 VERSION="$(command grep -m 1 '^Version: ' $METADATA | command cut -d ' ' -f 2)"
                 command ln -s $dep $out/deps/flakes/$NAME-$VERSION || true
+              done
+              for nixpkgsDep in ${pygithub}; do
+                METADATA=$nixpkgsDep/lib/python${pythonMajorMinorVersion}/site-packages/*.dist-info/METADATA
+                NAME="$(command grep -m 1 '^Name: ' $METADATA | command cut -d ' ' -f 2)"
+                VERSION="$(command grep -m 1 '^Version: ' $METADATA | command cut -d ' ' -f 2)"
+                command ln -s $nixpkgsDep $out/deps/nixpkgs/$NAME-$VERSION || true
               done
             '';
 
