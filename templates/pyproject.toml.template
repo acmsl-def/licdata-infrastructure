@@ -23,7 +23,7 @@ description = "@desc@"
 authors = [ @authors@ ]
 readme = "README.md"
 homepage = "@homepage@"
-packages = [{include = "@package@"}]
+packages = [{include = "org"}]
 
 [tool.poetry.dependencies]
 acmsl-licdata-domain = "^@acmslLicdataDomain@"
