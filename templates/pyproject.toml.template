@@ -29,6 +29,7 @@ packages = [{include = "@package@"}]
 acmsl-licdata-domain = "^@acmslLicdataDomain@"
 acmsl-licdata-events = "^@acmslLicdataEvents@"
 acmsl-licdata-events-infrastructure = "^@acmslLicdataEventsInfrastructure@"
+azure-functions = "^@azureFunctions@"
 pygithub = "^@pygithub@"
 python = "^@pythonMajorMinorVersion@"
 pythoneda-shared-pythonlang-domain = "^@pythonedaSharedPythonlangDomain@"

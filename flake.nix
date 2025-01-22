@@ -40,19 +40,24 @@
       url = "github:acmsl-def/licdata-events/0.0.26";
     };
     acmsl-licdata-events-infrastructure = {
-      inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
       inputs.pythoneda-shared-pythonlang-banner.follows =
         "pythoneda-shared-pythonlang-banner";
       inputs.pythoneda-shared-pythonlang-domain.follows =
         "pythoneda-shared-pythonlang-domain";
       url = "github:acmsl-def/licdata-events-infrastructure/0.0.18";
     };
+    azure-functions = {
+      inputs.flake-utils.follows = "flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:rydnr/nix-flakes/azure-functions-1.21.3.2?dir=azure-functions";
+    };
     flake-utils.url = "github:numtide/flake-utils/v1.0.0";
     nixpkgs.url = "github:NixOS/nixpkgs/24.05";
     pythoneda-shared-pythonlang-banner = {
-      inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
       url = "github:pythoneda-shared-pythonlang-def/banner/0.0.80";
     };
     pythoneda-shared-pythonlang-domain = {
@@ -95,7 +100,7 @@
         nixpkgsRelease =
           builtins.replaceStrings [ "\n" ] [ "" ] "nixpkgs-${nixpkgsVersion}";
         shared = import "${pythoneda-shared-pythonlang-banner}/nix/shared.nix";
-        acmsl-licdata-infrastructure-for = { acmsl-licdata-events, acmsl-licdata-events-infrastructure, acmsl-licdata-domain, python
+        acmsl-licdata-infrastructure-for = { acmsl-licdata-events, acmsl-licdata-events-infrastructure, acmsl-licdata-domain, azure-functions, python
           , pythoneda-shared-pythonlang-banner
           , pythoneda-shared-pythonlang-domain
           , pythoneda-shared-pythonlang-infrastructure}:
@@ -116,6 +121,7 @@
               acmslLicdataDomain = acmsl-licdata-domain.version;
               acmslLicdataEvents = acmsl-licdata-events.version;
               acmslLicdataEventsInfrastructure = acmsl-licdata-events-infrastructure.version;
+              azureFunctions = azure-functions.version;
               authors = builtins.concatStringsSep ","
                 (map (item: ''"${item}"'') maintainers);
               desc = description;
@@ -142,6 +148,7 @@
               acmsl-licdata-domain
               acmsl-licdata-events
               acmsl-licdata-events-infrastructure
+              azure-functions
               pygithub
               pythoneda-shared-pythonlang-domain
               pythoneda-shared-pythonlang-infrastructure
@@ -164,7 +171,7 @@
               done
               command mkdir -p $out/dist $out/deps/flakes
               command cp dist/${wheelName} $out/dist
-              for dep in ${acmsl-licdata-domain} ${acmsl-licdata-events} ${acmsl-licdata-events-infrastructure} ${pythoneda-shared-pythonlang-domain} ${pythoneda-shared-pythonlang-infrastructure}; do
+              for dep in ${acmsl-licdata-domain} ${acmsl-licdata-events} ${acmsl-licdata-events-infrastructure} ${azure-functions} ${pythoneda-shared-pythonlang-domain} ${pythoneda-shared-pythonlang-infrastructure}; do
                 command cp -r $dep/dist/* $out/deps || true
                 if [ -e $dep/deps ]; then
                   command cp -r $dep/deps/* $out/deps || true
@@ -278,6 +285,7 @@
               acmsl-licdata-domain = acmsl-licdata-domain.packages.${system}.acmsl-licdata-domain-python39;
               acmsl-licdata-events = acmsl-licdata-events.packages.${system}.acmsl-licdata-events-python39;
               acmsl-licdata-events-infrastructure = acmsl-licdata-events-infrastructure.packages.${system}.acmsl-licdata-events-infrastructure-python39;
+              azure-functions = azure-functions.packages.${system}.azure-functions-python39;
               python = pkgs.python39;
               pythoneda-shared-pythonlang-banner =
                 pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python39;
@@ -291,6 +299,7 @@
               acmsl-licdata-domain = acmsl-licdata-domain.packages.${system}.acmsl-licdata-domain-python310;
               acmsl-licdata-events = acmsl-licdata-events.packages.${system}.acmsl-licdata-events-python310;
               acmsl-licdata-events-infrastructure = acmsl-licdata-events-infrastructure.packages.${system}.acmsl-licdata-events-infrastructure-python310;
+              azure-functions = azure-functions.packages.${system}.azure-functions-python310;
               python = pkgs.python310;
               pythoneda-shared-pythonlang-banner =
                 pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python310;
@@ -304,6 +313,7 @@
               acmsl-licdata-domain = acmsl-licdata-domain.packages.${system}.acmsl-licdata-domain-python311;
               acmsl-licdata-events = acmsl-licdata-events.packages.${system}.acmsl-licdata-events-python311;
               acmsl-licdata-events-infrastructure = acmsl-licdata-events-infrastructure.packages.${system}.acmsl-licdata-events-infrastructure-python311;
+              azure-functions = azure-functions.packages.${system}.azure-functions-python311;
               python = pkgs.python311;
               pythoneda-shared-pythonlang-banner =
                 pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python311;
@@ -317,6 +327,7 @@
               acmsl-licdata-domain = acmsl-licdata-domain.packages.${system}.acmsl-licdata-domain-python312;
               acmsl-licdata-events = acmsl-licdata-events.packages.${system}.acmsl-licdata-events-python312;
               acmsl-licdata-events-infrastructure = acmsl-licdata-events-infrastructure.packages.${system}.acmsl-licdata-events-infrastructure-python312;
+              azure-functions = azure-functions.packages.${system}.azure-functions-python312;
               python = pkgs.python312;
               pythoneda-shared-pythonlang-banner =
                 pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python312;
@@ -330,6 +341,7 @@
               acmsl-licdata-domain = acmsl-licdata-domain.packages.${system}.acmsl-licdata-domain-python313;
               acmsl-licdata-events = acmsl-licdata-events.packages.${system}.acmsl-licdata-events-python313;
               acmsl-licdata-events-infrastructure = acmsl-licdata-events-infrastructure.packages.${system}.acmsl-licdata-events-infrastructure-python313;
+              azure-functions = azure-functions.packages.${system}.azure-functions-python313;
               python = pkgs.python313;
               pythoneda-shared-pythonlang-banner =
                 pythoneda-shared-pythonlang-banner.packages.${system}.pythoneda-shared-pythonlang-banner-python313;
