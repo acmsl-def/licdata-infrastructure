@@ -28,7 +28,7 @@
         "pythoneda-shared-pythonlang-banner";
       inputs.pythoneda-shared-pythonlang-domain.follows =
         "pythoneda-shared-pythonlang-domain";
-      url = "github:acmsl-def/licdata-domain/0.0.27";
+      url = "github:acmsl-def/licdata-domain/0.0.31";
     };
     acmsl-licdata-events = {
       inputs.flake-utils.follows = "flake-utils";
@@ -83,8 +83,8 @@
       let
         org = "acmsl";
         repo = "licdata-infrastructure";
-        version = "0.0.5";
-        sha256 = "1q90pz86hr7rmfwr6ncmhjd203684ygmfy5g4g587skh1apsdqx5";
+        version = "0.0.6";
+        sha256 = "1fpw9kwkb5ms20w5vvzp5zvx69qihjm5kbqbsgixbjxkv5bwxfh6";
         pname = "${org}-${repo}";
         pythonpackage = "org.acmsl.licdata.infrastructure";
         package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;
