@@ -142,17 +142,17 @@
       },
       "locked": {
         "dir": "azure-functions",
-        "lastModified": 1733506042,
-        "narHash": "sha256-lbpRHx2DQH/6ERg/kQq4JCiAIWBgODgf5c/mK9dhWwo=",
+        "lastModified": 1737645918,
+        "narHash": "sha256-Rvo2LccUwMRnJ/IYFdPfj/wdzBiI6kPNglGyajedO4Y=",
         "owner": "rydnr",
         "repo": "nix-flakes",
-        "rev": "b4233ce46f01ce551be2b30dd5542104697b177d",
+        "rev": "437e5fb93a6294d69bdb514d86f0e19eada7451b",
         "type": "github"
       },
       "original": {
         "dir": "azure-functions",
         "owner": "rydnr",
-        "ref": "azure-functions-1.21.3.2",
+        "ref": "azure-functions-1.21.3.3",
         "repo": "nix-flakes",
         "type": "github"
       }
