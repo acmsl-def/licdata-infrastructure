@@ -28,7 +28,7 @@
         "pythoneda-shared-pythonlang-banner";
       inputs.pythoneda-shared-pythonlang-domain.follows =
         "pythoneda-shared-pythonlang-domain";
-      url = "github:acmsl-def/licdata-domain/0.0.34";
+      url = "github:acmsl-def/licdata-domain/0.0.35";
     };
     acmsl-licdata-events = {
       inputs.flake-utils.follows = "flake-utils";
@@ -37,7 +37,7 @@
         "pythoneda-shared-pythonlang-banner";
       inputs.pythoneda-shared-pythonlang-domain.follows =
         "pythoneda-shared-pythonlang-domain";
-      url = "github:acmsl-def/licdata-events/0.0.31";
+      url = "github:acmsl-def/licdata-events/0.0.33";
     };
     acmsl-licdata-events-infrastructure = {
       inputs.flake-utils.follows = "flake-utils";
@@ -46,7 +46,7 @@
         "pythoneda-shared-pythonlang-banner";
       inputs.pythoneda-shared-pythonlang-domain.follows =
         "pythoneda-shared-pythonlang-domain";
-      url = "github:acmsl-def/licdata-events-infrastructure/0.0.23";
+      url = "github:acmsl-def/licdata-events-infrastructure/0.0.25";
     };
     azure-functions = {
       inputs.flake-utils.follows = "flake-utils";
@@ -58,14 +58,14 @@
     pythoneda-shared-pythonlang-banner = {
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:pythoneda-shared-pythonlang-def/banner/0.0.83";
+      url = "github:pythoneda-shared-pythonlang-def/banner/0.0.85";
     };
     pythoneda-shared-pythonlang-domain = {
       inputs.flake-utils.follows = "flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.pythoneda-shared-pythonlang-banner.follows =
         "pythoneda-shared-pythonlang-banner";
-      url = "github:pythoneda-shared-pythonlang-def/domain/0.0.128";
+      url = "github:pythoneda-shared-pythonlang-def/domain/0.0.131";
     };
     pythoneda-shared-pythonlang-infrastructure = {
       inputs.flake-utils.follows = "flake-utils";
@@ -74,7 +74,7 @@
         "pythoneda-shared-pythonlang-banner";
       inputs.pythoneda-shared-pythonlang-domain.follows =
         "pythoneda-shared-pythonlang-domain";
-      url = "github:pythoneda-shared-pythonlang-def/infrastructure/0.0.101";
+      url = "github:pythoneda-shared-pythonlang-def/infrastructure/0.0.104";
     };
   };
   outputs = inputs:
@@ -83,8 +83,8 @@
       let
         org = "acmsl";
         repo = "licdata-infrastructure";
-        version = "0.0.12";
-        sha256 = "1d7mlji1j3xdgxvx9s3l73hiwaipg3fb9khdcllvxb783c091hzf";
+        version = "0.0.14";
+        sha256 = "19jylh34dinw1jhp4nq4wqs6990zm5q2hsn6l2356q6qyvkld54r";
         pname = "${org}-${repo}";
         pythonpackage = "org.acmsl.licdata.infrastructure";
         package = builtins.replaceStrings [ "." ] [ "/" ] pythonpackage;
